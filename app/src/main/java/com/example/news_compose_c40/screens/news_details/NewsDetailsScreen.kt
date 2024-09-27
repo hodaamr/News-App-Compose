@@ -3,8 +3,6 @@ package com.example.news_compose_c40.screens.news_details
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.gestures.rememberScrollableState
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -36,9 +34,9 @@ import com.example.news_compose_c40.R
 import com.example.news_compose_c40.activity.HomeActivity
 import com.example.news_compose_c40.model.article.Article
 import com.example.news_compose_c40.model.source.Source
-import com.example.news_compose_c40.screens.news.getErrorMessage
 import com.example.news_compose_c40.ui.theme.Poppins
 import com.example.news_compose_c40.ui.theme.textColor
+import com.example.news_compose_c40.util.getErrorMessage
 import com.example.news_compose_c40.widgets.ErrorDialog
 import com.example.news_compose_c40.widgets.NewsCard
 import com.example.news_compose_c40.widgets.NewsTopAppBar
@@ -73,6 +71,7 @@ fun NewsDetailsScreen(vm:NewsDetailsViewModel= hiltViewModel(),sourceName:String
     Scaffold (topBar = {NewsTopAppBar(
         shouldDisplaySearchIcon = false,
         shouldDisplayMenuIcon = false,
+        titleString = sourceName,
         scope = scope,
         drawerState = drawerState 
     )}){padding->

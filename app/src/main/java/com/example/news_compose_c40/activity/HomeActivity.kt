@@ -137,7 +137,10 @@ fun NewsAppNavigation(
         }
 
         composable<SearchRoute> {
-            SearchScreen()
+            SearchScreen {title, sourceName ->
+                navController.navigate(NewsDetailsRoute(title, sourceName))
+
+            }
         }
 
         composable<SettingsRoute>{

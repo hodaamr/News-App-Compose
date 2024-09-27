@@ -26,4 +26,9 @@ interface NewsService {
     ): ArticlesResponse
 
 
+    @GET("everything")
+    suspend fun getArticles(
+        @Query("q") searchQuery: String,
+    ): ArticlesResponse
+
 }
